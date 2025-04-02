@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succinct CHAT</title>
+    <meta name="description" content="Interact with Succinct's SP1 zkVM platform and get real-time Twitter updates">
+    <link rel="icon" href="https://testnet.succinct.xyz/images/succinct-icon-pink.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <header class="header">
+        <div class="logo-container">
+            <img src="https://testnet.succinct.xyz/images/succinct-icon-pink.svg" alt="Succinct Logo" class="logo-img">
+            <div class="logo-text">SUCCINCT</div>
+        </div>
+        <nav class="nav-links">
+            <a href="https://docs.succinct.xyz" target="_blank" class="nav-link">Docs</a>
+            <a href="https://testnet.succinct.xyz" target="_blank" class="nav-link">Testnet</a>
+            <a href="https://github.com/succinctlabs" target="_blank" class="nav-link">GitHub</a>
+            <a href="https://twitter.com/SuccinctLabs" target="_blank" class="nav-link">Twitter</a>
+        </nav>  
+    </header>
+
+    <div class="main-container">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1 class="chat-title">SUCCINCT CHAT</h1>
+                <p class="chat-subtitle">Ask about SP1, zkVM technology, or check latest updates</p>
+            </div>
+            <div class="messages-container" id="chat-area"></div>
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="user-input" 
+                        placeholder="Ask about SP1, zkVM capabilities, or recent updates..."
+                        rows="3"
+                    ></textarea>
+                    <button id="send-button" class="primary-button">
+                        <svg class="send-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                        <span>SEND</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="twitter-container">
+            <div class="twitter-header">
+                <div class="twitter-header-left">
+                    <svg class="twitter-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    <span class="twitter-handle">@SuccinctLabs</span>
+                </div>
+                <button class="twitter-refresh" id="refresh-button">
+                    <svg class="refresh-icon" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+                    </svg>
+                    <span>Refresh</span>
+                </button>
+            </div>
+            <div class="twitter-feed" id="twitter-feed"></div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loader"></div>
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="notification error" id="error-notification">
+        <div class="notification-icon">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+        </div>
+        <div class="notification-content" id="error-message"></div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html> 
