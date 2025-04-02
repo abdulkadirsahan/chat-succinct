@@ -15,8 +15,8 @@ const port = process.env.PORT || 3000;
 
 // Twitter credentials - IMPORTANT: Replace with your own or use environment variables
 const TWITTER_CREDS = {
-    username: process.env.TWITTER_USERNAME || 'serkankels',
-    password: process.env.TWITTER_PASSWORD || 'Kalsiyum.5'
+    username: process.env.TWITTER_USERNAME || '',
+    password: process.env.TWITTER_PASSWORD || ''
 };
 
 // Initialize Twitter scraper
